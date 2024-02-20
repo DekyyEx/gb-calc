@@ -1,8 +1,7 @@
 package Logic;
 
-public class ComplexNumber {
-    private float a;
-    private float b;
+public class ComplexNumber extends Complex{
+
     private float newA;
     private float newB;
     ComplexNumber newComplex;
@@ -31,7 +30,7 @@ public class ComplexNumber {
     }
     public ComplexNumber multiply(ComplexNumber otherNumber) {
         newA = (a * otherNumber.getA()) - (b * otherNumber.getB());
-        newB = (b * otherNumber.getA()) - (a * otherNumber.getA());
+        newB = (b * otherNumber.getA()) + (a * otherNumber.getB());
         newComplex = new ComplexNumber(newA, newB);
         return newComplex;
     }
@@ -44,6 +43,6 @@ public class ComplexNumber {
         return newComplex;
     }
 public String toString() {
-        return "(" + a + ")" + "(" + b + ")";
+        return "(" + a + ") + (" + b + ")i";
 }
 }
